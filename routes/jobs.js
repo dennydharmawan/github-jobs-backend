@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const authenticateUser = require('./verifyToken');
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
   try {
     const results = await axios.get(
       'http://dev3.dansmultipro.co.id/api/recruitment/positions.json'
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:jobId/details', authenticateUser, async (req, res) => {
+router.get('/:jobId/details', authenticateUser, async (req, res, next) => {
   const jobId = req.params.jobId;
 
   try {
