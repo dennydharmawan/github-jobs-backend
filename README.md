@@ -1,34 +1,12 @@
-# ExpressJS REST API Boilerplate
+# ExpressJS REST API
 
 <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" /></a> <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" /></a> <a href="https://jwt.io/"><img src="https://img.shields.io/badge/JWT-FB015B?style=for-the-badge" /></a>
 
-A cookiecutter template to create REST API with ExpressJS and MongoDB, with JWT authentication.
-
-## Boilerplate Features
-
-- Registration
-- Login
-- JWT authentication
-- Private routes example
-- Schema Validation check (email validation, minimum characters, etc.)
-- Password Encryption
-- MongoDB Database
+REST API with ExpressJS and MongoDB, with JWT authentication.
 
 ## Setup
 
-1. Clone the project
-
-```
-git clone https://github.com/udz-codes/express-rest-boilerplate.git
-```
-
-2. Install packages
-
-```
-npm install
-```
-
-3. Setup environment variables: Create .env file in root of the project and set 3 enviroment variables
+Setup environment variables: Create .env file in root of the project and set 3 enviroment variables
 
 ```
 PORT = ""
@@ -41,18 +19,6 @@ JWT_SECRET = ""
   > **PORT:** Port number for local host <br/>
   > **DB_URL:** MongoDB URL, You can use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) as database <br/>
   > **JWT_SECRET:** A random string that will be used for JWT encoding and authentication <br/>
-
-4. Run the project
-
-```
-node app.js
-```
-
-OR, if you have [nodemon](https://www.npmjs.com/package/nodemon) installed
-
-```
-npm start
-```
 
 ## API endpoints
 
