@@ -8,15 +8,16 @@ require('dotenv/config'); // Environment variables
 // Route imports
 const homeRoutes = require('./routes/home');
 const authRoutes = require('./routes/auth');
-const privateRoutes = require('./routes/privateRoutes');
+const jobRoutes = require('./routes/jobs');
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
+
 // -> Route Middlewares
 app.use('/', homeRoutes);
-app.use('/api/private', privateRoutes);
-app.use('/api/user', authRoutes);
+app.use('/api/users', authRoutes);
+app.use('/api/jobs', jobRoutes);
 
 // Connect to Database
 mongoose.connect(process.env.DB_URL, () => {
