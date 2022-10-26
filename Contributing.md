@@ -1,10 +1,13 @@
-# <p align="center"> ExpressJS REST API Boilerplate</p> 
+# <p align="center"> ExpressJS REST API Boilerplate</p>
+
 A simple ExpressJS REST API Boilerplate with JWT authentication and MongoDB as database. We welcome all developers and open source enthusiasts to contribute to this project.
 
-# License 
+# License
+
 This project is licensed under the terms of the [**MIT license.**](https://github.com/udz-codes/express-rest-boilerplate/blob/master/LICENSE)
 
-#  Boilerplate Features:
+# Boilerplate Features
+
 - Registration
 - Login
 - JWT authentication
@@ -14,6 +17,7 @@ This project is licensed under the terms of the [**MIT license.**](https://githu
 - MongoDB Backend
 
 # Types of contributions you can make to this Repository ?
+
 - Documentation
 - Bug Fixes
 - New Features, etc.
@@ -34,6 +38,7 @@ This project is licensed under the terms of the [**MIT license.**](https://githu
 10. Keep patience for the project maintainer to review and merge the PR.
 
 # Code Of Conduct
+
  By using **ExpressJS REST API Boilerplate**, you agree that you will follow this code of conduct.
 <p> In short: Be nice. No harassment, trolling, or spamming. <p>
 
@@ -41,10 +46,9 @@ This project is licensed under the terms of the [**MIT license.**](https://githu
 
 - Trolling includes posting inflammatory comments to provoke an emotional response or disrupt discussions.
 - Spamming includes posting off-topic messages to disrupt discussions.
-- Following the proper flow for contribution 
+- Following the proper flow for contribution
 - Use appropriate language and avoiding harsh language
--  respecting other contributors and create an inclusive environment.
-
+- respecting other contributors and create an inclusive environment.
 
 **◻ Project Maintainer : Ujjwaldeep Singh | [GitHub](https://github.com/udz-codes)**
 
