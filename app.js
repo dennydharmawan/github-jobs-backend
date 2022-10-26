@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 
 require('dotenv/config'); // Environment variables
 
@@ -12,6 +13,7 @@ const jobRoutes = require('./routes/jobs');
 
 // Middlewares
 app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 
 // -> Route Middlewares
