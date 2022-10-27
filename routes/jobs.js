@@ -61,7 +61,7 @@ function filterArray(array, filters) {
   });
 }
 
-router.get('/search', async (req, res, next) => {
+router.post('/search', async (req, res, next) => {
   const page = parseInt(req.query?.page) || undefined;
   const pageSize = parseInt(req.query?.pageSize) || undefined;
   const filterCriteria = req?.body || null;
