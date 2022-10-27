@@ -4,24 +4,22 @@ const _ = require('lodash');
 
 const authenticateUser = require('./verifyToken');
 
-function getPaginatedItems(items, page, pageSize) {
-  const pg = page || 1;
-  const pgSize = pageSize || 1;
-  const offset = (pg - 1) * pgSize;
-  const pagedItems = _.drop(items, offset).slice(0, pgSize);
+function getPaginatedItems(items, page = 1, pageSize = 5) {
+  const offset = (page - 1) * pageSize;
+  const pagedItems = _.drop(items, offset).slice(0, pageSize);
 
   return {
-    page: pg,
-    pageSize: pgSize,
+    page,
+    pageSize,
     total: items.length,
-    total_pages: Math.ceil(items.length / pgSize),
+    total_pages: Math.ceil(items.length / pageSize),
     data: pagedItems
   };
 }
 
 router.get('/', async (req, res, next) => {
-  const page = parseInt(req.query.page);
-  const pageSize = parseInt(req.query.limit);
+  const page = parseInt(req.query?.page) || undefined;
+  const pageSize = parseInt(req.query?.pageSize) || undefined;
 
   try {
     const { data } = await axios.get(
