@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { registerValidation, loginValidation } = require('../validations.js');
 const User = require('../models/UserModel');
+const authenticateUser = require('./verifyToken.js');
 
 // Routers
 router.post('/register', async (req, res) => {
@@ -54,8 +55,41 @@ router.post('/login', async (req, res) => {
   // Create and assign JWT
   const token = jwt.sign({ _id: registeredUser._id }, process.env.JWT_SECRET);
 
-  res.cookie('token', token, { httpOnly: true });
+  res.cookie('token', token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict',
+    maxAge: 60 * 60 * 24 * 30,
+    path: '/',
+    domain: ''
+  });
   res.json({ token });
+});
+
+router.post('/logout', async (req, res) => {
+  const token = req.cookies.token;
+
+  if (!token) return res.sendStatus(204);
+
+  res.clearCookie('token', { httpOnly: true });
+
+  return res.sendStatus(200);
+});
+
+router.post('/authenticate', (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token)
+    return res.send({
+      isAuthenticated: false
+    });
+
+  try {
+    const verifiedUser = jwt.verify(token, process.env.JWT_SECRET);
+
+    res.send({ isAuthenticated: true, ...verifiedUser });
+  } catch (error) {
+    res.status(400).send({ message: error });
+  }
 });
 
 module.exports = router;
