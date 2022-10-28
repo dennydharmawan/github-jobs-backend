@@ -11,6 +11,8 @@ const homeRoutes = require('./routes/home');
 const authRoutes = require('./routes/auth');
 const jobRoutes = require('./routes/jobs');
 
+process.env.CORS_ALLOWED_ORIGINS = 'https://ghj.dennydharmawan.com';
+
 // Middlewares
 app.use(
   cors({
