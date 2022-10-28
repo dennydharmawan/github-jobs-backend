@@ -55,10 +55,11 @@ router.post('/login', async (req, res) => {
   // Create and assign JWT
   const token = jwt.sign({ _id: registeredUser._id }, process.env.JWT_SECRET);
 
+  //https://old.reddit.com/r/node/comments/mvrezq/cookie_security_samesite_question_deployment/
   res.cookie('token', token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    // sameSite: 'none',
+    sameSite: 'strict',
     maxAge: 60 * 60 * 24 * 30,
     path: '/',
     domain: ''
