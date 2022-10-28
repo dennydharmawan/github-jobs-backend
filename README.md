@@ -40,3 +40,4 @@ JWT_SECRET = ""
 | [@hapi/joi](https://www.npmjs.com/package/joi) | ^17.1.1 | Schema validation check |
 | [dotenv](https://www.npmjs.com/package/dotenv) | ^10.0.0 | Loads environment variables |
 | [cors](https://www.npmjs.com/package/cors) | ^2.8.5| enable CORS |
+a
