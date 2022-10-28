@@ -29,8 +29,8 @@ router.get('/', async (req, res, next) => {
     const paginatedItems = getPaginatedItems(data, page, pageSize);
 
     res.send(paginatedItems);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 });
 
@@ -42,8 +42,8 @@ router.get('/:jobId/details', authenticateUser, async (req, res, next) => {
       'http://dev3.dansmultipro.co.id/api/recruitment/positions/' + jobId
     );
     res.send(results?.data);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 });
 
@@ -93,8 +93,8 @@ router.post('/search', async (req, res, next) => {
     const paginatedItems = getPaginatedItems(filteredItems, page, pageSize);
 
     res.send(paginatedItems);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 });
 
